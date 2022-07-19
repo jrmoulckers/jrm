@@ -1,5 +1,5 @@
-import React, { Fragment, useEffect, useState } from "react";
-import { Link, animateScroll as scroll } from "react-scroll";
+import React, { Fragment } from "react";
+import { Link } from "react-scroll";
 import BackToTop from "../misc/BackToTop";
 
 export default function NavMenu(props) {

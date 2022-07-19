@@ -2,7 +2,6 @@ import React from "react";
 import { MdArrowUpward } from "react-icons/md";
 
 function BackToTop(props) {
-  console.log(props);
   return (
     <div
       className={`top-button-container circle flex 

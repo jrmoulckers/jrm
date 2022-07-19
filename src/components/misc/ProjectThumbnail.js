@@ -6,15 +6,6 @@ function ProjectThumbnail(props) {
   const [isModalActive, updateModalActive] = useState(false);
 
   const { title, tools, img, blurb, description, progress } = props;
-  const projectProps = {
-    title,
-    tools,
-    img,
-    // source,
-    blurb,
-    description,
-    progress,
-  };
 
   return (
     <Fragment>
@@ -22,7 +13,7 @@ function ProjectThumbnail(props) {
         className="project-thumbnail-container"
         // onClick={() => updateModalActive(true)}
       >
-        <img className="project-image" src={img} alt="testing" />
+        <img className="project-image" src={img} alt="Project" />
         <div className="project-info flex">
           <div className="project-title-container">
             <div className="title">{title}</div>

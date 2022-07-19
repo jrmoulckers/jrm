@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect, useState } from "react";
-import Skills from "./Skills";
 import AboutMe from "./AboutMe";
 
 function About(props) {
@@ -9,6 +8,7 @@ function About(props) {
     props.bucket
       .getObject({
         slug: "about",
+        id: "5f3d8696418ed800089f0d9d",
         props: "title,metadata",
       })
       .then((data) => {
@@ -17,7 +17,7 @@ function About(props) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [props.bucket]);
 
   const meta = data?.metadata;
   const title = data?.title;
@@ -33,7 +33,6 @@ function About(props) {
         </div>
         <div className="content flex-row">
           <AboutMe descr={meta.description_lines} img={profilePic} />
-          {/* <Skills bucket={props.bucket} /> */}
         </div>
       </section>
     </Fragment>

@@ -7,7 +7,7 @@ function AboutMe(props) {
     <section className="skills about-me flex" id="homepage-about-me">
       <Fade left>
         <div className="profile-pic-container flex">
-          <img src={props.img} className="profile-pic" />
+          <img src={props.img} className="profile-pic" alt="Jeffrey profile"/>
         </div>
         <div className="message">{getLineDelineated(props.descr)}</div>
       </Fade>

@@ -20,7 +20,7 @@ function Skills(props) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [props.bucket]);
 
   useEffect(() => {
     fetch(mediumURL)
@@ -47,7 +47,6 @@ function Skills(props) {
   const title = "Feed";
   const contactFields = "";
 
-  console.log(mediumData);
   return data ? (
     <section className="feed flex" id="homepage-feed">
       <div className="section-title-container flex">
@@ -57,7 +56,7 @@ function Skills(props) {
       <div className="content">
         <div className="feed-list flex-row carousel">
           {mediumData?.map((d) => (
-            <FeedItem data={d} />
+            <FeedItem data={d} key={d.slug}/>
           ))}
           {contactFields}
         </div>

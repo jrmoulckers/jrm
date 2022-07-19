@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Splash from "./Splash";
 import About from "./About";
 import Projects from "./Projects";

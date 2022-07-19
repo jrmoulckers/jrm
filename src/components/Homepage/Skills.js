@@ -11,6 +11,7 @@ function Skills(props) {
     props.bucket
       .getObjects({
         type: "skills",
+        id: "601a37358b30db0008eeebbb",
         props: "slug,title,metadata",
       })
       .then((data) => {
@@ -19,7 +20,7 @@ function Skills(props) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [props.bucket]);
 
   return data ? (
     <section

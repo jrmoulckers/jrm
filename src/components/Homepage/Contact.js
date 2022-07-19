@@ -4,12 +4,12 @@ function Contact(props) {
   const [data, updateData] = useState(null);
   const [phoneIsActive, setPhoneActive] = useState(false);
   const [emailIsActive, setEmailActive] = useState(false);
-  const [studentEmailIsActive, setStudentEmailActive] = useState(false);
 
   useEffect(() => {
     props.bucket
       .getObject({
         slug: "contact",
+        id: "601a48871996140008a5a461",
         props: "title,metadata",
       })
       .then((data) => {
@@ -18,9 +18,7 @@ function Contact(props) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
-
-  // console.log(data);
+  }, [props.bucket]);
 
   const meta = data?.metadata;
   const title = data?.title;

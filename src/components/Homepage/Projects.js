@@ -10,7 +10,9 @@ function Projects(props) {
   useEffect(() => {
     props.bucket
       .getObjects({
-        type: "projects",
+        query: {
+          type: "projects",
+        },
         props: "slug,title,metadata",
       })
       .then((data) => {
@@ -19,9 +21,9 @@ function Projects(props) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [props.bucket]);
 
-  const meta = data?.metadata;
+
   const title = "Projects";
   return data ? (
     <section className="projects flex" id="homepage-projects">

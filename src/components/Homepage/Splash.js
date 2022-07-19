@@ -1,6 +1,6 @@
 import React from "react";
 import { MdArrowDownward } from "react-icons/md";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 function Splash(props) {
   return (

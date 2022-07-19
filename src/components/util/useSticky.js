@@ -5,15 +5,6 @@ function useSticky() {
 
   const element = useRef();
 
-  const handleScroll = () => {
-    // const bottom = element.current?.getBoundingClientRect().bottom;
-    const top = element.current?.getBoundingClientRect().top;
-    // Check if nav is mounting/mounted
-    // const wasSticky = element.current?.getAttribute("class");
-    // console.log(wasSticky);
-    top < 0 ? setSticky(true) : setSticky(false);
-  };
-
   // This function handle the scroll performance issue
   // const debounce = (func, wait = 20, immediate = true) => {
   //   let timeOut;
@@ -32,11 +23,19 @@ function useSticky() {
   // };
 
   useEffect(() => {
+    const handleScroll = () => {
+      // const bottom = element.current?.getBoundingClientRect().bottom;
+      const top = element.current?.getBoundingClientRect().top;
+      // Check if nav is mounting/mounted
+      // const wasSticky = element.current?.getAttribute("class");
+      top < 0 ? setSticky(true) : setSticky(false);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", () => handleScroll);
     };
-  }, [/*debounce,*/ handleScroll]);
+  }, [/*debounce,*/]);
 
   return { isSticky, element };
 }
