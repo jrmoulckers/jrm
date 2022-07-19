@@ -17,9 +17,9 @@ function FeedItem(props) {
           </div>
           <div className="description">{d.description}</div>
           <a href={d.source} target="_blank" rel="noreferrer">
-            <div className="button see-more">
+            <button className="see-more">
               <div className="text">See More</div>
-            </div>
+            </button>
           </a>
         </div>
       </div>

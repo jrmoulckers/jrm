@@ -9,14 +9,22 @@
   background-color: $jrm-green;
   transition: 0.3s all;
 
-  &:hover,
-  &:after {
-    transform: scale(1.25, 1.25);
-  }
-
   .top-arrow {
     width: 75%;
     height: 75%;
+  }
+
+  &:hover,
+  &:after {
+    transform: scale(1.25, 1.25);
+    background-color: $jrm-green;
+  }
+
+  &:hover,
+  &:after,
+  .clear {
+    transform: scale(1.25, 1.25);
+    background-color: $jrm-green;
   }
 }
 

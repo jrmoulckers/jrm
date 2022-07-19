@@ -20,9 +20,9 @@ function ProjectThumbnail(props) {
             <div className="tools">{formatProjectTools(tools)}</div>
           </div>
           <div className="blurb">{blurb}</div>
-          <div className="button see-more">
+          <button className="see-more">
             <div className="text">See More</div>
-          </div>
+          </button>
           {/* <p className="progress">{progress}%</p>
       <p className="description">{description}</p> */}
         </div>

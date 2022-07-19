@@ -16,7 +16,7 @@ export default function NavMenu(props) {
         smooth={true}
         duration={500}
       >
-        <div className="nav-link">Home</div>
+        <div className="nav-link no-select">Home</div>
       </Link>
       <Link
         to="homepage-about"
@@ -26,7 +26,7 @@ export default function NavMenu(props) {
         duration={500}
         offset={-50}
       >
-        <div className="nav-link">About</div>
+        <div className="nav-link no-select">About</div>
       </Link>
       {/* <Link
             to="homepage-skills"
@@ -36,7 +36,7 @@ export default function NavMenu(props) {
             duration={500}
             offset={-50}
           >
-            <div className="nav-link">Skills</div>
+            <div className="nav-link no-select">Skills</div>
           </Link> */}
       <Link
         to="homepage-projects"
@@ -46,7 +46,7 @@ export default function NavMenu(props) {
         duration={500}
         offset={-50}
       >
-        <div className="nav-link">Projects</div>
+        <div className="nav-link no-select">Projects</div>
       </Link>
       <Link
         to="homepage-feed"
@@ -56,7 +56,7 @@ export default function NavMenu(props) {
         duration={500}
         offset={-50}
       >
-        <div className="nav-link">Feed</div>
+        <div className="nav-link no-select">Feed</div>
       </Link>
       <Link
         to="homepage-contact"
@@ -66,7 +66,7 @@ export default function NavMenu(props) {
         duration={500}
         offset={-50}
       >
-        <div className="nav-link">Contact</div>
+        <div className="nav-link no-select">Contact</div>
       </Link>
     </Fragment>
   );
@@ -86,7 +86,7 @@ export default function NavMenu(props) {
           smooth={true}
           duration={800}
         >
-          <BackToTop visible={props.sticky} clear/>
+          <BackToTop visible={props.sticky} clear />
         </Link>
       </section>
     </div>

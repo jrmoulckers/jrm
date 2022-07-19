@@ -29,7 +29,7 @@ function ProjectModal(props) {
           </div>
           <div className="description">{description}</div>
           <a href={source} target="_blank" rel="noreferrer">
-            <div className="visit-site-container button">Visit Site</div>
+            <div className="visit-site-container">Visit Site</div>
           </a>
         </div>
       </div>
