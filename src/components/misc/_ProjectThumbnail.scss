@@ -1,0 +1,87 @@
+@import "../../variables";
+
+.project-thumbnail-container {
+  width: 310px;
+  height: 310px;
+  position: relative;
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    transition: 0.5s all;
+  }
+
+  &:hover,
+  &:focus {
+    .project-image {
+      opacity: 0.2;
+    }
+
+    .project-info {
+      opacity: 1;
+    }
+  }
+
+  .project-info {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: 0.5s all;
+
+    .project-title-container {
+      margin-bottom: 10%;
+
+      .title {
+        font: $small-header-font-bold;
+        color: $title-text;
+      }
+
+      .tools {
+        font: $big-content-font;
+        color: $jrm-green;
+      }
+    }
+
+    .button {
+      border: 2px solid $jrm-green;
+      box-sizing: inherit;
+      cursor: pointer;
+      display: inline-block;
+      font: $content-font;
+      padding: 10px 20px;
+      transition: all 0.5s;
+      color: $header-text;
+
+      &:hover,
+      &:focus {
+        background-color: $jrm-green;
+        border: 2px solid $jrm-green;
+        color: $light-light;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .project-thumbnail-container {
+    pointer-events: none;
+    width: 45vw;
+    height: 45vw;
+
+    .project-info {
+      display: none;
+    }
+  }
+
+  .github-calendar {
+    display: none;
+  }
+}

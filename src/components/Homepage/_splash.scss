@@ -1,0 +1,116 @@
+@import "../../variables";
+
+section.splash {
+  height: 100vh;
+  width: 100vw;
+  background-color: $jrm-green;
+  padding: 0;
+
+  a {
+    height: 46px;
+    width: 200px;
+    margin: 20px 0;
+  }
+
+  button.mailing-list {
+    border: 2px solid $jrm-blue;
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 46px;
+    width: 200px;
+    background-color: transparent;
+    color: $jrm-blue;
+    font: $title-font;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.2s all;
+
+    &:hover,
+    &:focus {
+      background-color: $jrm-blue;
+      color: white;
+    }
+  }
+
+  .content {
+    span {
+      color: $jrm-blue;
+    }
+
+    .welcome-message {
+      color: $light-light;
+    }
+
+    .view-my-work {
+      #more-about-me {
+        border: 2px solid $light-light;
+        color: $light-light;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 46px;
+        background-color: transparent;
+        padding: 12px 12px;
+        font: $big-content-font;
+        cursor: pointer;
+        transition: 0.2s all;
+
+        .text {
+          white-space: nowrap;
+          padding-right: 4px;
+        }
+      }
+
+      .splash-arrow {
+        transition: 0.1s all;
+        padding: 10px;
+        opacity: 0;
+        transition: 0.2s all;
+
+        #splash-arrow {
+          font: $big-header-font-bold;
+          color: $light-light;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        #more-about-me {
+          background-color: $jrm-blue;
+          border: 2px solid $jrm-blue;
+          color: $light-light;
+        }
+        .splash-arrow {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Styles */
+  .splash {
+    flex-wrap: wrap;
+  }
+
+  .splash svg {
+    min-width: 0;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  /* Styles */
+  .splash {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 610px) {
+}

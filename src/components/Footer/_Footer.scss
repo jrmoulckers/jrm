@@ -1,0 +1,33 @@
+@import "../../variables";
+
+$footer-height: 40vh;
+
+.footer {
+  color: $light-light;
+  background-color: $jrm-dark;
+  font: $content-font;
+  min-height: $footer-height;
+
+  .title {
+    font: $text;
+  }
+
+  .brand {
+    color: $subtitle;
+  }
+
+  p {
+    padding: 6px 10px;
+    margin: 0;
+  }
+
+  span {
+    color: $header-text;
+  }
+
+  a,
+  a:visited {
+    color: $light-light;
+    font-weight: 400;
+  }
+}

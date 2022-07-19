@@ -1,0 +1,245 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  // color: red;
+  text-align: center;
+  overflow: overlay;
+}
+
+section {
+  padding: $section-padding;
+  // width: calc(100vw - (2 * $section-padding));
+  min-height: calc(100vh - #{$nav-height});
+}
+
+.flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flex-even {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.flex-row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.grid {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.carousel {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  justify-content: left;
+  padding: 10px 0;
+
+  &::-webkit-scrollbar {
+    width: 50px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $faded-blue;
+    border-radius: 30px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: $jrm-green;
+    }
+  }
+}
+
+button {
+  background-color: $clear;
+  border: 2px solid #fff;
+  box-sizing: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font: $header-font;
+  padding: 10px 20px;
+  transition: all 0.5s;
+}
+
+h1,
+.h1 {
+  font: $title-font;
+  color: $title-text;
+  margin-bottom: 20px;
+}
+
+h2,
+.h2 {
+  font: $big-header-font-bold;
+  color: $header-text;
+  margin-bottom: 10px;
+}
+
+h3,
+.h3 {
+  font: $header-font;
+  color: $header-text;
+  margin-bottom: 10px;
+}
+
+h4,
+.h4 {
+  font: $small-header-font;
+  color: $header-text;
+  // margin-bottom: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+// h1 + p {
+//   font: $title-font;
+//   color: $subtitle;
+//   margin-top: 4px;
+// }
+
+p {
+  font: $content-font;
+  color: $text;
+}
+
+a {
+  text-decoration: none;
+  color: $header-text;
+  &:visited {
+    color: currentColor;
+  }
+}
+
+.hidden {
+  visibility: hidden;
+  animation: shrinkToCenter 0.3s;
+}
+
+.visible {
+  visibility: visible;
+  animation: growFromCenter 0.3s;
+}
+
+.inactive {
+  display: none;
+}
+
+.active {
+  display: initial;
+}
+
+.circle {
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.main-content {
+  min-height: 60vh;
+}
+
+.section-title-container {
+  height: 14vh;
+  position: relative;
+  width: max-content;
+  margin: $section-title-container-margin;
+}
+
+.section-title {
+  position: relative;
+  width: max-content;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.header-underline {
+  background: $title-text;
+  height: 4px;
+  width: 75px;
+  margin-top: 2vh;
+}
+
+.fancy {
+  text-decoration: none;
+  position: relative;
+  letter-spacing: 0.5px;
+
+  &::after {
+    content: " ";
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: 0.2s all;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+@keyframes growFromCenter {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrinkToCenter {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 20px;
+  z-index: 1000;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $jrm-dark-grey;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  width: 50px;
+  background-color: $jrm-dark-grey;
+}

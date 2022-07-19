@@ -1,0 +1,26 @@
+@import "../../variables";
+
+$icon-height: 24pt;
+$icon-container-height: 40pt;
+
+.socials {
+  font-size: $icon-height;
+  margin: 5vh;
+
+  a,
+  a:visited {
+    color: $social-media;
+    background-color: $jrm-dark-grey;
+    height: $icon-container-height;
+    width: $icon-container-height;
+    margin: 10px;
+    justify-content: center;
+    transition: 0.5s all;
+
+    &:hover,
+    &:focus {
+      background-color: $jrm-green;
+      color: $jrm-dark;
+    }
+  }
+}
