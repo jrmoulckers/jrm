@@ -41,7 +41,7 @@ $nav-link-margin: 0 20px;
       .nav-link {
         color: $light-light;
         display: inline;
-        font: $small-header-font;
+        font: $nav-font;
         margin: $nav-link-margin;
         transition: 0.3s all;
         padding: 10px 10px;
@@ -70,8 +70,8 @@ $nav-link-margin: 0 20px;
   }
 
   .burger-menu {
-    display: initial;
-    width: auto;
+    display: block;
+    z-index: 1000;
 
     a {
       color: $light-light;

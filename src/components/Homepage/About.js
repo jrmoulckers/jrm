@@ -26,7 +26,7 @@ function About(props) {
 
   return data ? (
     <Fragment>
-      <section className="about flex" id="homepage-about">
+      <section className="about flex" id="about">
         <div className="section-title-container flex">
           <h2 className="section-title">{title}</h2>
           <div className="header-underline" />

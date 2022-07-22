@@ -9,6 +9,7 @@ html {
 
 section {
   padding: $section-padding;
+  scroll-margin-top: $nav-height;
   // width: calc(100vw - (2 * $section-padding));
   min-height: calc(100vh - #{$nav-height});
 }
@@ -46,11 +47,26 @@ section {
   overflow-x: scroll;
   overflow-y: hidden;
   justify-content: left;
-  padding: 10px 0;
+  
 
   &::-webkit-scrollbar {
     width: 50px;
   }
+}
+
+.vertical-carousel {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  justify-content: flex-start;
+
+  &::-webkit-scrollbar {
+    height: 50px;
+  }
+}
+
+.carousel,
+.vertical-carousel {
+  padding: 10px 0;
   &::-webkit-scrollbar-track {
     background-color: transparent;
   }
@@ -269,6 +285,10 @@ a {
 }
 
 @media only screen and (max-width: 768px) {
+  section {
+    scroll-margin-top: initial;
+  }
+
   button {
     background-color: $jrm-green;
     color: $light-light;

@@ -1,76 +1,14 @@
 import React, { Fragment } from "react";
-import { Link } from "react-scroll";
+import { HashLink as Link } from "react-router-hash-link";
 import BackToTop from "../misc/BackToTop";
+import NavLinks from "./NavLinks";
 
 export default function NavMenu(props) {
   if (props.redirects) {
     // ({ redirect links } = props.redirects);
   }
 
-  const links = (
-    <Fragment>
-      <Link
-        to="homepage-splash"
-        activeClass="focus"
-        spy={true}
-        smooth={true}
-        duration={500}
-      >
-        <div className="nav-link no-select">Home</div>
-      </Link>
-      <Link
-        to="homepage-about"
-        activeClass="focus"
-        spy={true}
-        smooth={true}
-        duration={500}
-        offset={-50}
-      >
-        <div className="nav-link no-select">About</div>
-      </Link>
-      {/* <Link
-            to="homepage-skills"
-            activeClass="focus"
-            spy={true}
-            smooth={true}
-            duration={500}
-            offset={-50}
-          >
-            <div className="nav-link no-select">Skills</div>
-          </Link> */}
-      <Link
-        to="homepage-projects"
-        activeClass="focus"
-        spy={true}
-        smooth={true}
-        duration={500}
-        offset={-50}
-      >
-        <div className="nav-link no-select">Projects</div>
-      </Link>
-      <Link
-        to="homepage-feed"
-        activeClass="focus"
-        spy={true}
-        smooth={true}
-        duration={500}
-        offset={-50}
-      >
-        <div className="nav-link no-select">Feed</div>
-      </Link>
-      <Link
-        to="homepage-contact"
-        activeClass="focus"
-        spy={true}
-        smooth={true}
-        duration={500}
-        offset={-50}
-      >
-        <div className="nav-link no-select">Contact</div>
-      </Link>
-    </Fragment>
-  );
-
+  const links = <NavLinks />;
   return (
     <div className="navigation-container" ref={props.element}>
       <section
@@ -80,7 +18,7 @@ export default function NavMenu(props) {
       >
         <div className="navigation-links-container">{links}</div>
         <Link
-          to="homepage-splash"
+          to="/#home"
           activeClass="focus"
           spy={true}
           smooth={true}

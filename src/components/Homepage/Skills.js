@@ -25,7 +25,7 @@ function Skills(props) {
   return data ? (
     <section
       className="skills flex"
-      id="homepage-skills"
+      id="skills"
     >
       <Fade right>
         <div className="skills-list" style={{ width: "100%" }}>

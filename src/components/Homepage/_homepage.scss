@@ -62,7 +62,7 @@ body {
 
 .contact {
   background-color: $jrm-green;
-  min-height: calc(60vh - #{$nav-height});
+  min-height: calc(40vh - #{$nav-height});
   padding-bottom: 10vh;
 
   .phone {
