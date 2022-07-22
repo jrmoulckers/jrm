@@ -6,8 +6,6 @@ import Feed from "./Feed";
 import Contact from "./Contact";
 
 function Homepage(props) {
-  
-
   return (
     <section className="homepage">
       <Splash />

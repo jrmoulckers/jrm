@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import BackToTop from "../misc/BackToTop";
 import NavLinks from "./NavLinks";
+import scrollToTop from "../util/scrollToTop";
 
 export default function BurgerMenu(props) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,16 +27,14 @@ export default function BurgerMenu(props) {
   const links = (
     <section className="flex burger-menu-links">
       <NavLinks onClick={() => toggleMenu(false)} />
-      <Link
-        to="#home"
-        activeClass="focus"
-        spy={true}
-        smooth={true}
-        duration={800}
-        onClick={() => toggleMenu(false)}
+      <a
+        onClick={() => {
+          scrollToTop();
+          toggleMenu(false);
+        }}
       >
         <BackToTop visible />
-      </Link>
+      </a>
     </section>
   );
 

@@ -24,20 +24,22 @@ function About(props) {
   const profilePic =
     "https://imgix.cosmicjs.com/1c8757a0-e259-11ea-ad85-b3e5c5f45697-seattleprofilepic.circle.png";
 
-  return data ? (
-    <Fragment>
-      <section className="about flex" id="about">
-        <div className="section-title-container flex">
-          <h2 className="section-title">{title}</h2>
-          <div className="header-underline" />
-        </div>
-        <div className="content flex-row">
-          <AboutMe descr={meta.description_lines} img={profilePic} />
-        </div>
-      </section>
-    </Fragment>
-  ) : (
-    <div />
+  return (
+    <section className="about flex" id="about">
+      {data ? (
+        <Fragment>
+          <div className="section-title-container flex">
+            <h2 className="section-title">{title}</h2>
+            <div className="header-underline" />
+          </div>
+          <div className="content flex-row">
+            <AboutMe descr={meta.description_lines} img={profilePic} />
+          </div>
+        </Fragment>
+      ) : (
+        <div />
+      )}
+    </section>
   );
 }
 

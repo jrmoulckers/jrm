@@ -1,5 +1,10 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import "./App.scss";
 
 import AdminPage from "./components/AdminPage/AdminPage";
@@ -7,7 +12,7 @@ import Footer from "./components/Footer/Footer";
 import Homepage from "./components/Homepage";
 import Navigation from "./components/Navigation";
 import Project from "./components/Projects/Project";
-import ScrollToTop from "./components/util/scrollToTop";
+import ScrollRouter from "./components/util/ScrollRouter";
 
 const Cosmic = require("cosmicjs");
 const api = Cosmic();
@@ -24,16 +29,16 @@ function App() {
           <Navigation />
           {/* <Header /> */}
           <div className="main-content">
-            <ScrollToTop>
+            <ScrollRouter>
               <Routes>
                 <Route path="/admin" element={<AdminPage />} />
                 <Route
                   path="/projects/:id"
                   element={<Project bucket={bucket} />}
                 />
-                <Route path="/" element={<Homepage bucket={bucket} />} />
+                <Route path="/*" element={<Homepage bucket={bucket} />} />
               </Routes>
-            </ScrollToTop>
+            </ScrollRouter>
           </div>
           <Footer bucket={bucket} />
         </div>

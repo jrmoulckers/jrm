@@ -1,6 +1,7 @@
 import React from "react";
-import { HashLink as Link } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import BackToTop from "../misc/BackToTop";
+import scrollToTop from "../util/scrollToTop";
 import NavLinks from "./NavLinks";
 
 export default function NavMenu(props) {
@@ -17,15 +18,9 @@ export default function NavMenu(props) {
         }`}
       >
         <div className="navigation-links-container">{links}</div>
-        <Link
-          to="/#home"
-          activeClass="focus"
-          spy={true}
-          smooth={true}
-          duration={800}
-        >
+        <a onClick={scrollToTop}>
           <BackToTop visible={props.sticky} clear />
-        </Link>
+        </a>
       </section>
     </div>
   );
