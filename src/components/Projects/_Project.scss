@@ -1,0 +1,23 @@
+@import "../../variables";
+
+.project-container {
+  min-height: 80vh;
+  background-color: $light-light;
+
+  .project {
+    height: 100%;
+    margin: 0 10vw;
+
+    .title-container {
+      .title {
+        font: $big-header-font-bold;
+        color: $title-text;
+      }
+
+      .tools {
+        font: $big-content-font;
+        color: $jrm-green;
+      }
+    }
+  }
+}

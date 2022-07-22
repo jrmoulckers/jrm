@@ -24,7 +24,7 @@ function Contact(props) {
   const title = data?.title;
   const contact = meta?.extra_data;
   return data ? (
-    <section className="contact flex" id="homepage-contact">
+    <section className="contact flex" id="contact">
       <div className="section-title-container flex">
         <h2 className="section-title">{title}</h2>
         <div className="header-underline" />

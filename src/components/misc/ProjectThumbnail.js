@@ -1,11 +1,15 @@
 import React, { Fragment, useState } from "react";
 import { formatProjectTools } from "../util/Formatting";
 import ProjectModal from "../modals/ProjectModal";
+import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ProjectThumbnail(props) {
   const [isModalActive, updateModalActive] = useState(false);
 
-  const { title, tools, img, blurb, description, progress } = props;
+  let history = useHistory();
+
+  const { id, slug, title, tools, img, blurb, description, progress } = props;
 
   return (
     <Fragment>
@@ -20,9 +24,11 @@ function ProjectThumbnail(props) {
             <div className="tools">{formatProjectTools(tools)}</div>
           </div>
           <div className="blurb">{blurb}</div>
-          <button className="see-more">
-            <div className="text">See More</div>
-          </button>
+          <Link to={`/projects/${slug}`}>
+            <button className="see-more">
+              <div className="text">See More</div>
+            </button>
+          </Link>
           {/* <p className="progress">{progress}%</p>
       <p className="description">{description}</p> */}
         </div>

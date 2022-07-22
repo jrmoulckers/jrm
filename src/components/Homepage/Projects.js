@@ -13,20 +13,20 @@ function Projects(props) {
         query: {
           type: "projects",
         },
-        props: "slug,title,metadata",
+        props: "id,slug,title,metadata",
       })
       .then((data) => {
         updateData(data.objects);
+        console.log(data.objects);
       })
       .catch((error) => {
         console.log(error);
       });
   }, [props.bucket]);
 
-
   const title = "Projects";
   return data ? (
-    <section className="projects flex" id="homepage-projects">
+    <section className="projects flex" id="projects">
       <div className="section-title-container flex">
         <h2 className="section-title">{title}</h2>
         <div className="header-underline" />
@@ -36,6 +36,7 @@ function Projects(props) {
           <div className="project-list grid">
             {data?.slice(0, NUM_VISIBLE_PROJECTS).map((d) => (
               <ProjectThumbnail
+                id={d.id}
                 title={d.title}
                 tools={d.metadata.tools}
                 img={d.metadata.splash?.imgix_url}

@@ -12,29 +12,9 @@ section.splash {
     margin: 20px 0;
   }
 
-  button.mailing-list {
-    border: 2px solid $jrm-blue;
-    box-sizing: border-box;
-    border-radius: 5px;
-    height: 46px;
-    width: 200px;
-    background-color: transparent;
-    color: $jrm-blue;
-    font: $title-font;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.2s all;
-
-    &:hover,
-    &:focus {
-      background-color: $jrm-blue;
-      color: white;
-    }
-  }
-
   .content {
     span {
-      color: $jrm-blue;
+      color: $jrm-dark-blue;
     }
 
     .welcome-message {
@@ -77,8 +57,8 @@ section.splash {
       &:hover,
       &:focus {
         #more-about-me {
-          background-color: $jrm-blue;
-          border: 2px solid $jrm-blue;
+          background-color: $jrm-dark-blue;
+          border: 2px solid $jrm-dark-blue;
           color: $light-light;
         }
         .splash-arrow {

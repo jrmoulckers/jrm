@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SocialMedia from "../misc/SocialMedia";
 
-function Header() {
+function Header(props) {
   return (
     <div className="global-header">
       <Link to="/" className="header-desktop">

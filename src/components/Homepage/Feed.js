@@ -48,7 +48,7 @@ function Skills(props) {
   const contactFields = "";
 
   return data ? (
-    <section className="feed flex" id="homepage-feed">
+    <section className="feed flex" id="feed">
       <div className="section-title-container flex">
         <h2 className="section-title">{title}</h2>
         <div className="header-underline" />

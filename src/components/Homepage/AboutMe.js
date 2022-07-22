@@ -4,7 +4,7 @@ import { getLineDelineated } from "../util/CosmicFunctions.js";
 
 function AboutMe(props) {
   return props.descr ? (
-    <section className="skills about-me flex" id="homepage-about-me">
+    <section className="skills about-me flex" id="about-me">
       <Fade left>
         <div className="profile-pic-container flex">
           <img src={props.img} className="profile-pic" alt="Jeffrey profile"/>

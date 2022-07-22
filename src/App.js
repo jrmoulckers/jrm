@@ -4,7 +4,11 @@ import "./App.scss";
 
 import AdminPage from "./components/AdminPage/AdminPage";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 import Homepage from "./components/Homepage";
+import Navigation from "./components/Navigation";
+import Project from "./components/Projects/Project";
+import ScrollToTop from "./components/util/scrollToTop";
 
 const Cosmic = require("cosmicjs");
 const api = Cosmic();
@@ -18,19 +22,23 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          {/* <Navigation /> */}
+          <ScrollToTop />
+          <Navigation />
           {/* <Header /> */}
           <div className="main-content">
             <Switch>
-              <Route path="/">
-                <Homepage bucket={bucket}/>
-              </Route>
               <Route path="/admin">
                 <AdminPage />
               </Route>
+              <Route path="/projects/:id">
+                <Project bucket={bucket} />
+              </Route>
+              <Route path="/">
+                <Homepage bucket={bucket} />
+              </Route>
             </Switch>
           </div>
-          <Footer />
+          <Footer bucket={bucket} />
         </div>
       </Router>
     </div>
