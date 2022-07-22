@@ -47,11 +47,26 @@ section {
   overflow-x: scroll;
   overflow-y: hidden;
   justify-content: left;
-  padding: 10px 0;
+  
 
   &::-webkit-scrollbar {
     width: 50px;
   }
+}
+
+.vertical-carousel {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  justify-content: flex-start;
+
+  &::-webkit-scrollbar {
+    height: 50px;
+  }
+}
+
+.carousel,
+.vertical-carousel {
+  padding: 10px 0;
   &::-webkit-scrollbar-track {
     background-color: transparent;
   }

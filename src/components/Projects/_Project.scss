@@ -5,8 +5,8 @@
   background-color: $light-light;
 
   .project {
-    height: 100%;
     margin: 0 10vw;
+    justify-content: space-around;
 
     .title-container {
       .title {
@@ -17,6 +17,15 @@
       .tools {
         font: $big-content-font;
         color: $jrm-green;
+      }
+    }
+
+    .project-gallery {
+      width: 100%;
+
+      .project-image {
+        height: 40vh;
+        margin: 10px 0;
       }
     }
   }

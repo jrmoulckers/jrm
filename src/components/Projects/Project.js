@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { formatProjectTools } from "../util/Formatting";
+import Slider from "react-slick";
 
 function Project(props) {
   const [data, updateData] = useState(null);
@@ -35,29 +36,35 @@ function Project(props) {
       });
   }, []);
 
-  console.log(data);
-
-  if(!data) {
-    return <div />
+  if (!data) {
+    return <div />;
   }
 
   const { title } = data;
-  const { date, description, gallery, link, splash, tools } = data.metadata;
+  const { date, description, gallery, link, splash, summary, tools } =
+    data.metadata;
 
   return (
     <div className="project-container" onClick={(e) => e.stopPropagation()}>
-      <div className="project flex-even">
-        <div className="project-gallery"></div>
+      <div className="project flex">
         <div className="title-container">
-          <div className="title">{title}</div>
-          <div className="tools">{formatProjectTools(tools)}</div>
+          <h1 className="title">{title}</h1>
+          <h3 className="tools">{formatProjectTools(tools)}</h3>
         </div>
-        <div className="description">{description}</div>
+        <p className="summary">{summary}</p>
+        <p className="description">{description}</p>
         {link ? (
           <a href={link} target="_blank" rel="noreferrer">
             <div className="visit-site-container">Visit Site</div>
           </a>
         ) : null}
+        <div className="project-gallery flex">
+          {gallery.map((i) => (
+            <div>
+              <img src={i} className="project-image" />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
