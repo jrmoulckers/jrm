@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { formatProjectTools } from "../util/Formatting";
-import Slider from "react-slick";
 
 function Project(props) {
   const [data, updateData] = useState(null);

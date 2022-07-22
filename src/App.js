@@ -23,22 +23,22 @@ function App() {
       <Router>
         <div>
           <ScrollToTop />
-          <Navigation />
-          {/* <Header /> */}
-          <div className="main-content">
-            <Switch>
-              <Route path="/admin">
-                <AdminPage />
-              </Route>
-              <Route path="/projects/:id">
-                <Project bucket={bucket} />
-              </Route>
-              <Route path="/">
-                <Homepage bucket={bucket} />
-              </Route>
-            </Switch>
-          </div>
-          <Footer bucket={bucket} />
+            <Navigation />
+            {/* <Header /> */}
+            <div className="main-content">
+              <Switch>
+                <Route path="/admin">
+                  <AdminPage />
+                </Route>
+                <Route path="/projects/:id">
+                  <Project bucket={bucket} />
+                </Route>
+                <Route path="/">
+                  <Homepage bucket={bucket} />
+                </Route>
+              </Switch>
+            </div>
+            <Footer bucket={bucket} />
         </div>
       </Router>
     </div>
