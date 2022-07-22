@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
 import AdminPage from "./components/AdminPage/AdminPage";
@@ -21,23 +21,21 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          <ScrollToTop />
-            <Navigation />
-            {/* <Header /> */}
-            <div className="main-content">
-              <Switch>
-                <Route path="/admin">
-                  <AdminPage />
-                </Route>
-                <Route path="/projects/:id">
-                  <Project bucket={bucket} />
-                </Route>
-                <Route path="/">
-                  <Homepage bucket={bucket} />
-                </Route>
-              </Switch>
-            </div>
-            <Footer bucket={bucket} />
+          <Navigation />
+          {/* <Header /> */}
+          <div className="main-content">
+            <ScrollToTop>
+              <Routes>
+                <Route path="/admin" element={<AdminPage />} />
+                <Route
+                  path="/projects/:id"
+                  element={<Project bucket={bucket} />}
+                />
+                <Route path="/" element={<Homepage bucket={bucket} />} />
+              </Routes>
+            </ScrollToTop>
+          </div>
+          <Footer bucket={bucket} />
         </div>
       </Router>
     </div>

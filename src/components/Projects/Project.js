@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { formatProjectTools } from "../util/Formatting";
 
 function Project(props) {
   const [data, updateData] = useState(null);
-  let history = useHistory();
+  let navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -26,12 +25,12 @@ function Project(props) {
         if (d?.objects && d.objects.length > 0) {
           updateData(d.objects[0]);
         } else {
-          history.push({ pathname: "/" });
+          navigate("/");
         }
       })
       .catch((error) => {
         console.log(error);
-        history.push({ pathname: "/" });
+        navigate("/");
       });
   }, []);
 
@@ -60,7 +59,11 @@ function Project(props) {
         <div className="project-gallery flex">
           {gallery.map((i) => (
             <div>
-              <img src={i} className="project-image" alt="Project showcase gallery item"/>
+              <img
+                src={i}
+                className="project-image"
+                alt="Project showcase gallery item"
+              />
             </div>
           ))}
         </div>

@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from "react";
 import { formatProjectTools } from "../util/Formatting";
 import ProjectModal from "../modals/ProjectModal";
-import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function ProjectThumbnail(props) {
   const [isModalActive, updateModalActive] = useState(false);
 
-  let history = useHistory();
 
   const { id, slug, title, tools, img, blurb, description, progress } = props;
 
