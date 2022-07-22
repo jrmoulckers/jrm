@@ -60,7 +60,7 @@ function Project(props) {
         <div className="project-gallery flex">
           {gallery.map((i) => (
             <div>
-              <img src={i} className="project-image" />
+              <img src={i} className="project-image" alt="Project showcase gallery item"/>
             </div>
           ))}
         </div>

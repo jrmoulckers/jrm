@@ -4,12 +4,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(
-  <React.StrictMode>
+const app =
+  process.env.REACT_APP_ENV === "dev" ? (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  ) : (
     <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+  );
+
+ReactDOM.render(app, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
