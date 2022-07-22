@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Fade from "react-reveal/Fade";
+import Pulse from "react-reveal/Pulse";
 import ProjectThumbnail from "../misc/ProjectThumbnail";
 
 const NUM_VISIBLE_PROJECTS = 18;
@@ -31,10 +31,11 @@ function Projects(props) {
         <h2 className="section-title">{title}</h2>
         <div className="header-underline" />
       </div>
-      <Fade left>
-        <div className="content">
-          <div className="project-list grid">
-            {data?.slice(0, NUM_VISIBLE_PROJECTS).map((d) => (
+      {/* <Fade> */}
+      <div className="content">
+        <div className="project-list grid">
+          {data?.slice(0, NUM_VISIBLE_PROJECTS).map((d, idx) => (
+            <Pulse>
               <ProjectThumbnail
                 id={d.id}
                 title={d.title}
@@ -45,16 +46,17 @@ function Projects(props) {
                 slug={d.slug}
                 key={d.slug}
               />
-            ))}
-          </div>
+            </Pulse>
+          ))}
         </div>
-        <div className="github-calendar">
-          <img
-            src="http://ghchart.rshah.org/jrmoulckers"
-            alt="jrmoulckers' Github chart"
-          />
-        </div>
-      </Fade>
+      </div>
+      <div className="github-calendar">
+        <img
+          src="http://ghchart.rshah.org/jrmoulckers"
+          alt="jrmoulckers' Github chart"
+        />
+      </div>
+      {/* </Fade> */}
     </section>
   ) : (
     <div />
